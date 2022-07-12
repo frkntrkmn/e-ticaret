@@ -1,6 +1,8 @@
 package com.furkan.eticaret.controller;
 
 import com.furkan.eticaret.dto.request.MusteriSaveDto;
+import com.furkan.eticaret.dto.response.MusteriFindAllDto;
+import com.furkan.eticaret.repository.entity.Musteri;
 import com.furkan.eticaret.service.MusteriService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -26,5 +29,11 @@ public class MusteriController {
     public ResponseEntity<Void> saveDto(@RequestBody@Valid MusteriSaveDto musteriSaveDto){
         musteriService.save(musteriSaveDto);
         return ResponseEntity.ok().build();
+    }
+
+    @ApiOperation(value = "musteri findall")
+    @PostMapping("finallmusteri")
+    public ResponseEntity<List<MusteriFindAllDto>> musteriFindAll(){
+        return ResponseEntity.ok(musteriService.musteriFindAllDtos());
     }
 }

@@ -16,14 +16,24 @@ public class MusteriSaveDto {
     @NotNull(message = "enter your mail address")
     String email;
 
+
+    int number;
+
     @JsonCreator
-    public MusteriSaveDto(String name, String surname,  String email) {
+    public MusteriSaveDto(int number,String name, String surname,  String email) {
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.number = number;
     }
 
+    public int getNumber() {
+        return number;
+    }
 
+    public void setNumber(int Number) {
+        this.number = number;
+    }
     public String getName() {
         return name;
     }

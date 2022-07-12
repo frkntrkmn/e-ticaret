@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-07-04T20:03:39+0300",
+    date = "2022-07-12T22:51:50+0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.15 (JetBrains s.r.o.)"
 )
 @Component
@@ -28,6 +28,7 @@ public class MusteriMapperImpl implements MusteriMapper {
         musteri.name( musteriSaveDto.getName() );
         musteri.surname( musteriSaveDto.getSurname() );
         musteri.email( musteriSaveDto.getEmail() );
+        musteri.number( musteriSaveDto.getNumber() );
 
         return musteri.build();
     }
@@ -42,6 +43,7 @@ public class MusteriMapperImpl implements MusteriMapper {
 
         musteriFindAllDto.setName( musteri.getName() );
         musteriFindAllDto.setSurname( musteri.getSurname() );
+        musteriFindAllDto.setNumber( musteri.getNumber() );
         musteriFindAllDto.setEmail( musteri.getEmail() );
 
         return musteriFindAllDto;

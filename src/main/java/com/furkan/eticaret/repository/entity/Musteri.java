@@ -20,5 +20,6 @@ public class Musteri {
     String name;
     String surname;
     String email;
+    int number;
 
 }
