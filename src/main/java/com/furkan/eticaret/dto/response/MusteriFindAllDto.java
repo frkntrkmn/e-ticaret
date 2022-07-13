@@ -3,6 +3,8 @@ package com.furkan.eticaret.dto.response;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class MusteriFindAllDto {
+
+    long id;
     String name;
     String surname;
     int number;
@@ -14,6 +16,7 @@ public class MusteriFindAllDto {
         this.surname = surname;
         this.number = number;
         this.email = email;
+        this.id = id;
     }
 
     public MusteriFindAllDto() {
@@ -22,6 +25,15 @@ public class MusteriFindAllDto {
     public String getName() {
         return name;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 
     public void setName(String name) {
         this.name = name;

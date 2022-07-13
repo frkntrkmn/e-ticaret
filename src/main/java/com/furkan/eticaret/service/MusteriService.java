@@ -37,4 +37,9 @@ public class MusteriService {
             return resultname;
     }
 
+
+    public void delete(long id){
+        musteriRepository.deleteById(id);
+    }
+
 }
